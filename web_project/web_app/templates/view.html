@@ -1,0 +1,28 @@
+{% extends 'index.html'%}
+{% block content%}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Contact_No</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for record in records%}
+    <tr>
+      <th scope="row">{{record.id}}</th>
+      <td>{{record.name}}</td>
+      <td>{{record.address}}</td>
+      <td>{{record.email}}</td>
+      <td>{{record.contact_no}}</td>
+      <td>
+      <a href="edit/{{record.id}}"class="btn btn-warning">edit</a>
+      <a href="delete/{{record.id}}"class="btn btn-danger">delete</a>
+      </td>
+    </tr>
+    {%endfor%}
+{%endblock%}
